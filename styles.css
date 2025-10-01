@@ -1,0 +1,126 @@
+/* =========================
+   Variables de colores
+========================= */
+:root {
+  --bg: #f4f5f7;               /* Fondo general claro */
+  --card-bg: #ffffff;           /* Fondo del formulario */
+  --accent: #1e3a8a;            /* Color de botones y acentos */
+  --text: #1f2937;              /* Texto principal */
+  --muted: #6b7280;             /* Texto secundario / labels */
+  --border: #d1d5db;            /* Bordes */
+  --input-bg: #f9fafb;          /* Fondo de inputs */
+  --shadow: rgba(0,0,0,0.1);    /* Sombra de caja */
+}
+
+/* =========================
+   Reset y base
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* =========================
+   Contenedor del formulario
+========================= */
+.container {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 35px 40px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 20px var(--shadow);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px var(--shadow);
+}
+
+/* =========================
+   Encabezados
+========================= */
+.container h1 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-weight: 600;
+}
+.container p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: var(--muted);
+}
+
+/* =========================
+   Formulario
+========================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Labels */
+form label {
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Inputs */
+form input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: var(--input-bg);
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+form input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(30,58,138,0.3);
+  transform: translateY(-1px);
+}
+
+/* Botón */
+form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--accent);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+form button:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(30,58,138,0.4);
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 500px) {
+  .container {
+    padding: 25px 20px;
+  }
+}
